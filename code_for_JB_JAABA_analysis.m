@@ -1,14 +1,26 @@
 ii=1;%ii indicates which condition you want to load
 %
-outdir="C:\Users\User\OneDrive - McGill University\PhD-1\Course\Winter22_QLSC600\Module_6\QLSC_600_TO\Assigment2\Data\Chor\o_five_10n1GA_0s1x900s0s#n#n#n@40";
-%% Load data from JB
-choredir_JB='C:\Users\User\OneDrive - McGill University\PhD-1\Course\Winter22_QLSC600\Module_6\QLSC_600_TO\Assigment2\Data\Chor\o_five_10n1GA_0s1x900s0s#n#n#n@40';
+if ispc == 1
+    outdir="./Output/";
+else
+    outdir=;
+end
+    %% Load data from JB
+if ispc == 1
+    choredir_JB='./Data/10n1GA';
+else
+    choredir_JB='';
+end
 [dat_JB,uname_JB]=get_JB_data(choredir_JB,ii);
 %get x and y
 dat_JB=get_xy_center(dat_JB);
 
 %% load JAABA data
-choredir_JAABA='C:\Users\User\OneDrive - McGill University\PhD-1\Course\Winter22_QLSC600\Module_6\QLSC_600_TO\Assigment2\Data';
+if ispc == 1
+    choredir_JAABA='./Data/JAABA_data/jaaba_result';
+else
+    choredir_JAABA=;
+end
 % field t0 is when turning starts in second, t1 is when turning events end
 % in second
 [dat_JAABA,uname_JAABA]=get_JAABA_data(choredir_JAABA,ii);
