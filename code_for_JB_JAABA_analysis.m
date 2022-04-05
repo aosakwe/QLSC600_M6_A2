@@ -4,13 +4,13 @@ ii=2;%ii indicates which condition you want to load
 if ispc == 1
     outdir="./Output/";
 else
-    outdir='/';
+    outdir="/Users/lucasphilipp/Desktop/McGill/QLS 600/Behaviour/output";
 end
     %% Load data from JB
 if ispc == 1
     choredir_JB='./Data';%/10n1GA';
 else
-    choredir_JB='';
+    choredir_JB='/Users/lucasphilipp/Desktop/McGill/QLS 600/Behaviour/o_five_10n1GA_0s1x900s0s#n#n#n@40/';
 end
 
 [dat_JB,uname_JB]=get_JB_data(choredir_JB,ii);
@@ -22,7 +22,7 @@ dat_JB=get_xy_center(dat_JB);
 if ispc == 1
     choredir_JAABA='./Data/JAABA_data/jaaba_result';
 else
-    choredir_JAABA='';
+    choredir_JAABA='/Users/lucasphilipp/Desktop/McGill/QLS 600/Behaviour/jaaba_result';
 end
 
 % field t0 is when turning starts in second, t1 is when turning events end
