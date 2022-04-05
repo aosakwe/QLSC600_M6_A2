@@ -42,7 +42,7 @@ end
 
 idx = find(nb == ii);
 
-for jj = idx(1:3)'% for demostraton we just want to load three folders, if you want to load all, delete '(1:3)'
+for jj = idx'%(1:3)'% for demostraton we just want to load three folders, if you want to load all, delete '(1:3)'
     dirname = fullfile(d(jj).folder,d(jj).name);
     fname = dir(fullfile(dirname,['*scores_turn.mat']));%load the table and save it to the structure 
     f = contains({fname.name},['scores_turn.']);

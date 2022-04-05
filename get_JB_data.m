@@ -44,7 +44,7 @@ end
 [uname,na,nb] = unique(splits);%find how many conditions we have based on the filename 
 
 idx = find(nb == ii);
-for jj = idx(1:3)'% for demostraton we just want to load three folders, if you want to load all, delete '(1:3)'
+for jj = idx'%(1:3)'% for demostraton we just want to load three folders, if you want to load all, delete '(1:3)'
     dirname = fullfile(d(jj).folder,d(jj).name);
     fname = dir(fullfile(dirname,['*trx.mat']));%open the trx file in each folder
     f = contains({fname.name},['trx.']);

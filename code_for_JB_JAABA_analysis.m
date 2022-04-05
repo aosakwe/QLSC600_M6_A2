@@ -1,6 +1,6 @@
-ii=1;%ii indicates which condition you want to load
+ii=2;%ii indicates which condition you want to load
 %
-%<<<<<<< HEAD
+
 if ispc == 1
     outdir="./Output/";
 else
@@ -8,31 +8,23 @@ else
 end
     %% Load data from JB
 if ispc == 1
-    choredir_JB='./Data/10n1GA';
+    choredir_JB='./Data';%/10n1GA';
 else
     choredir_JB='';
 end
-%=======
-%outdir="/Users/oyamat/Documents/GitHub/lulumoonxyl/";
-% %% Load data from JB and JAABA
-%choredir_JB='/Users/oyamat/Desktop/JB_results/';
 
-%>>>>>>> cf759aa37dd22d3c2b23d61c2790c61b3f2e0d01
 [dat_JB,uname_JB]=get_JB_data(choredir_JB,ii);
 %get x and y
 dat_JB=get_xy_center(dat_JB);
 
-%<<<<<<< HEAD
+
 %% load JAABA data
 if ispc == 1
     choredir_JAABA='./Data/JAABA_data/jaaba_result';
 else
     choredir_JAABA='';
 end
-%=======
-%load JAABA data
-%choredir_JAABA='/Users/oyamat/Desktop/JAAVA_result_1/';
-%>>>>>>> cf759aa37dd22d3c2b23d61c2790c61b3f2e0d01
+
 % field t0 is when turning starts in second, t1 is when turning events end
 % in second
 [dat_JAABA,uname_JAABA]=get_JAABA_data(choredir_JAABA,ii);
