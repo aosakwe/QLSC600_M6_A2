@@ -1,12 +1,2 @@
 Data/
-align_JB_JAABA_data.m
-arrange_JAABA_data.m
-cal_deg_pre_post_turn.m
-code_for_JB_JAABA_analysis.asv
-find_ind_t0s_t1s.m
-get_JAABA_data.m~
-get_tunring_xy_pos.m
-get_xy_center.m
-plot_specific_trajectory.m
-save_all_figures.m
 test

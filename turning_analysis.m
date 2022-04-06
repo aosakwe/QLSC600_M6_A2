@@ -76,6 +76,7 @@ end
 figure
 polarhistogram(pre_deg_all,pol_bins)
 title({'head direction v.s. turning frequency=total # of turns with a certain start direction','(all trajectories)/total # of turns (all trajectories)'})
+
 %1.
 dur=zeros(size(pre_deg,1),1);
 dur=t1s_all-t0s_all;
@@ -149,6 +150,7 @@ title('Total time [s] spent turning in each grid cell');
 xlabel('$x$ position','interpreter','latex')
 ylabel('$y$ position','interpreter','latex')
 
+
 %time spend in the grid square
 time_grid = zeros(250/sqbins);
 
@@ -187,6 +189,7 @@ title('Total time [s] spent in each grid cell');
 xlabel('$x$ position','interpreter','latex')
 ylabel('$y$ position','interpreter','latex')
 
+
 figure('color','w');
 imagesc(time_turn_xy./time_grid); % This will plot a 2D matrix with value of each weight encoded by a colour.
 ax=gca;
@@ -204,6 +207,7 @@ set(gca,'xticklabel',xtickcell)
 title('time spent turning in this grid square/total time spent in this grid square');
 xlabel('$x$ position','interpreter','latex')
 ylabel('$y$ position','interpreter','latex')
+
 
 div=time_turn_xy./time_grid;
 [row, col] = find(div >=1);
@@ -255,6 +259,9 @@ for kk = 1:numel(theta_vec);
 [Xs,Ys,Zs] = sphere(size(theta,2)+1);
 hs = surf(Hmax*Xs,Hmax*Ys,Hmax*Zs);
 set(hs,'facecolor','none','edgecolor','w','edgealpha',0.2)
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
 camlight;
 set(gca,{'xtick' 'ytick' 'ztick' 'vis' 'clim'},{[] [] [] 'on' [0 Hmax]});
 axis equal vis3d;

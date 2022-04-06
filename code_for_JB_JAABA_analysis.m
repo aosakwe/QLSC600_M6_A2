@@ -1,5 +1,6 @@
-ii=2;%ii indicates which condition you want to load
+%ii=1;%ii indicates which condition you want to load
 %
+ii = 1;
 
 if ispc == 1
     outdir="./Output/";
@@ -47,6 +48,7 @@ list=[1 2];% just which animal you want to plot
 plot_specific_trajectory(list,dat_JB.x,dat_JB.y,dat_JAABA.turn_x,dat_JAABA.turn_y,dat_JAABA.t0_idx,dat_JAABA.t1_idx);
 %%  save figures
 save_all_figures(outdir);
+
 %% save data
 file_dir=fullfile(outdir,'Data');
 
@@ -58,3 +60,7 @@ if isfile(filename)
 delete(filename);
 end
 save( filename, 'dat*')
+
+turning_analysis;
+save_all_figures(append("./Output/Condition_",int2str(ii),"/"));
+
